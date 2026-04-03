@@ -1,4 +1,4 @@
-# C Project Template (Advanced)
+# C Project Template
 
 ## Build
 cmake -S . -B build
