@@ -46,6 +46,7 @@ target_include_directories(unity PUBLIC tests/unity)
 add_executable(tests
     tests/test_main.c
     tests/test_add.c
+    tests/test_subtract.c
 )
 target_link_libraries(tests PRIVATE math unity)
 set_project_warnings(tests)
