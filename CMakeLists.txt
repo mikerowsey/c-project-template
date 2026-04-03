@@ -9,6 +9,18 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(cmake/compiler_warnings.cmake)
 
 # -----------------------
+# Sanitizers (Linux only)
+# -----------------------
+option(ENABLE_SANITIZERS "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
+if(ENABLE_SANITIZERS)
+    if(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
+        message(FATAL_ERROR "Sanitizers are only supported on Linux")
+    endif()
+    add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
+    add_link_options(-fsanitize=address,undefined)
+endif()
+
+# -----------------------
 # Core library
 # -----------------------
 add_library(core STATIC
