@@ -22,6 +22,7 @@ set_project_warnings(core)
 # -----------------------
 add_library(math STATIC
     src/math/add.c
+    src/math/subtract.c
 )
 target_include_directories(math PUBLIC include)
 set_project_warnings(math)
