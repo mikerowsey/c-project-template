@@ -1,5 +1,5 @@
 build/
 *.o
-*.out
-*.exe
-compile_commands.json
+*.a
+*.d
+.DS_Store

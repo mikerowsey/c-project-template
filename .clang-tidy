@@ -1,7 +1,15 @@
+---
 Checks: >
+  clang-diagnostic-*,
   clang-analyzer-*,
   bugprone-*,
+  cert-*,
+  misc-*,
   performance-*,
-  readability-*
-
-WarningsAsErrors: '*'
+  portability-*,
+  readability-*,
+  -readability-magic-numbers,
+  -cert-err33-c
+WarningsAsErrors: "*"
+HeaderFilterRegex: "include/.*"
+...

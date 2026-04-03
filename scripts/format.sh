@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-find . \( -name '*.c' -o -name '*.h' \) -exec clang-format -i {} +
+set -euo pipefail
+find . -path ./tests/unity -prune -o \( -name '*.c' -o -name '*.h' \) -print | xargs clang-format -i
